@@ -1,9 +1,17 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "vue3-telegram-login",
   "files": [
     "dist"
   ],
+  "main": "./dist/vue3-telegram-login.umd.js",
+  "module": "./dist/vue3-telegram-login.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-telegram-login.es.js",
+      "require": "./dist/vue3-telegram-login.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +23,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.5",
-    "vite": "^2.3.7"
+    "vite": "^2.3.7",
+    "vue3-telegram-login": "^0.0.2"
   }
 }

@@ -15,6 +15,7 @@
 </template>
 
 <script setup>
+import { telegramLoginTemp } from 'vue3-telegram-login'
 function yourCallbackFunction (user) {
   // gets user as an input
   // id, first_name, last_name, username,

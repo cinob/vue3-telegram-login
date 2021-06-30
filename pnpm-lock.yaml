@@ -5,6 +5,7 @@ specifiers:
   '@vue/compiler-sfc': ^3.0.5
   vite: ^2.3.7
   vue: ^3.0.5
+  vue3-telegram-login: ^0.0.2
 
 dependencies:
   vue: 3.1.2
@@ -13,6 +14,7 @@ devDependencies:
   '@vitejs/plugin-vue': 1.2.4_@vue+compiler-sfc@3.1.2
   '@vue/compiler-sfc': 3.1.2_vue@3.1.2
   vite: 2.3.8
+  vue3-telegram-login: 0.0.2
 
 packages:
 
@@ -96,14 +98,12 @@ packages:
     resolution: {integrity: sha512-glJzJoN2xE7I2lRvwKM5u1BHRPTd1yc8iaf//Lai/78/uYAvE5DXp5HzWRFOwMlbRvMGJHIQjOqoxj87cDAaag==}
     dependencies:
       '@vue/shared': 3.1.2
-    dev: false
 
   /@vue/runtime-core/3.1.2:
     resolution: {integrity: sha512-gsPZG4dRIkixuuKmoj4P9IHgfT0yaFLcqWOM5F/bCk0nxQn1XtxH8oUehWuET726KhbukvDoJfe9G2CKviy80w==}
     dependencies:
       '@vue/reactivity': 3.1.2
       '@vue/shared': 3.1.2
-    dev: false
 
   /@vue/runtime-dom/3.1.2:
     resolution: {integrity: sha512-QvINxjLucEZFzp5f0NVu7JqWYCv5TKQfkH2FDs/N6QNE4iKcYtKrWdT0HKfABnVXG28Znqv6rIH0dH4ZAOwxpA==}
@@ -111,7 +111,6 @@ packages:
       '@vue/runtime-core': 3.1.2
       '@vue/shared': 3.1.2
       csstype: 2.6.17
-    dev: false
 
   /@vue/shared/3.1.2:
     resolution: {integrity: sha512-EmH/poaDWBPJaPILXNI/1fvUbArJQmmTyVCwvvyDYDFnkPoTclAbHRAtyIvqfez7jybTDn077HTNILpxlsoWhg==}
@@ -143,7 +142,6 @@ packages:
 
   /csstype/2.6.17:
     resolution: {integrity: sha512-u1wmTI1jJGzCJzWndZo8mk4wnPTZd1eOIYTYvuEyOQGfmDl3TrabCCfKnOC86FZwW/9djqTl933UF/cS425i9A==}
-    dev: false
 
   /emojis-list/3.0.0:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
@@ -395,7 +393,12 @@ packages:
       '@vue/compiler-dom': 3.1.2
       '@vue/runtime-dom': 3.1.2
       '@vue/shared': 3.1.2
-    dev: false
+
+  /vue3-telegram-login/0.0.2:
+    resolution: {integrity: sha512-W6v4XZulq+scGzfid6w3G6582piZ2lvo1c0CftKPiyNw5W/bciSNBLKdXdtupJPOaAy4MtJ8SeFFUAA3yCB7Lw==}
+    dependencies:
+      vue: 3.1.2
+    dev: true
 
   /yallist/3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
