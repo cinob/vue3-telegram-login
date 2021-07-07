@@ -1,6 +1,21 @@
 {
   "version": "0.0.3",
   "name": "vue3-telegram-login",
+  "author": {
+    "name": "cinob",
+    "email": "cinob@foxmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cinob/vue3-telegram-login.git"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "component",
+    "telegram"
+  ],
   "files": [
     "dist",
     "types/*.d.ts"
