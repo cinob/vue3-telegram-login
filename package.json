@@ -1,10 +1,12 @@
 {
-  "version": "0.0.2",
+  "version": "0.0.3",
   "name": "vue3-telegram-login",
   "files": [
-    "dist"
+    "dist",
+    "types/*.d.ts"
   ],
   "main": "./dist/vue3-telegram-login.umd.js",
+  "types": "types/index.d.ts",
   "module": "./dist/vue3-telegram-login.es.js",
   "exports": {
     ".": {
