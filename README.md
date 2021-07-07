@@ -16,12 +16,12 @@ Install with [npm](https://npmjs.com):
   ```bash
   $ npm i vue3-telegram-login --save
   ```
-```
+ 
 ## Usage
 
 Import `telegram-login-temp`, pass it to the `components` and use in your template
 
-​```html
+```html
 <template>
   <!-- Callback mode -->
   <telegram-login-temp
