@@ -39,7 +39,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmit(['callback'])
+const emit = defineEmit(['callback', 'loaded'])
 function onTelegramAuth (user) {
   emit('callback', user)
 }
@@ -53,6 +53,10 @@ script.setAttribute('data-size', props.size)
 script.setAttribute('data-userpic', props.userpic)
 script.setAttribute('data-telegram-login', props.telegramLogin)
 script.setAttribute('data-request-access', props.requestAccess)
+
+script.onload = () => {
+  emit('loaded')
+}
 
 if (props.radius) script.setAttribute('data-radius', props.radius)
 

@@ -24,9 +24,11 @@ Import `telegram-login-temp`, pass it to the `components` and use in your templa
 ```html
 <template>
   <!-- Callback mode -->
+  <span v-if="!isLoaded">Loading...</span>
   <telegram-login-temp
     mode="callback"
     telegram-login="YourTelegramBot"
+    @loaded='telegramLoadedCallbackFunc'
     @callback="yourCallbackFunction"
   />
 
@@ -34,12 +36,22 @@ Import `telegram-login-temp`, pass it to the `components` and use in your templa
   <telegram-login-temp
     mode="redirect"
     telegram-login="YourTelegramBot"
+    @loaded='telegramLoadedCallbackFunc'
     redirect-url="https://your-website.io"
   />
 </template>
 
 <script setup>
 import { telegramLoginTemp } from 'vue3-telegram-login'
+import { ref } from 'vue'
+
+const isLoaded = ref(false)
+
+function telegramLoadedCallbackFunc () {
+  console.log('script is loaded')
+  isLoaded.value = true
+}
+
 function yourCallbackFunction (user) {
   // gets user as an input
   // id, first_name, last_name, username,
@@ -58,6 +70,7 @@ You can play around with options on the official [widget page](https://core.tele
 | mode          | 'callback' or 'redirect'                                                      | True     | null        |
 | telegramLogin | Your telegram bot name                                                        | True     | null        |
 | @callback     | Your callback function, it will be called after success if mode is 'callback' | False    | true        |
+| @loaded       | Telegram script loaded callback function                                      | False    | null        |
 | redirectUrl   | Your redirect URL, user will be redirected if mode is 'redirect'              | False    | null        |
 | requestAccess | 'write' if you want to get access to send messages from your bot              | False    | 'read'      |
 | size          | 'large', 'medium' or 'small'                                                  | False    | 'large'     |
