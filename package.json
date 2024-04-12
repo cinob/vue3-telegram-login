@@ -20,6 +20,7 @@
     "dist",
     "types/*.d.ts"
   ],
+  "type": "module",
   "main": "./dist/vue3-telegram-login.umd.js",
   "types": "types/index.d.ts",
   "module": "./dist/vue3-telegram-login.es.js",
