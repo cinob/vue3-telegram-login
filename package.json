@@ -1,5 +1,5 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.5",
   "name": "vue3-telegram-login",
   "author": {
     "name": "cinob",
@@ -21,27 +21,29 @@
     "types/*.d.ts"
   ],
   "type": "module",
-  "main": "./dist/vue3-telegram-login.umd.js",
+  "main": "./dist/vue3-telegram-login.umd.cjs",
   "types": "types/index.d.ts",
-  "module": "./dist/vue3-telegram-login.es.js",
+  "module": "./dist/vue3-telegram-login.js",
   "exports": {
     ".": {
-      "import": "./dist/vue3-telegram-login.es.js",
-      "require": "./dist/vue3-telegram-login.umd.js"
+      "import": "./dist/vue3-telegram-login.js",
+      "require": "./dist/vue3-telegram-login.umd.cjs"
     }
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "up": "taze major -I"
   },
   "dependencies": {
-    "vue": "^3.0.5"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.2.3",
-    "@vue/compiler-sfc": "^3.0.5",
-    "vite": "^2.3.7",
-    "vue3-telegram-login": "^0.0.2"
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/compiler-sfc": "^3.4.21",
+    "taze": "^0.13.3",
+    "vite": "^5.2.8",
+    "vue3-telegram-login": "^0.0.4"
   }
 }

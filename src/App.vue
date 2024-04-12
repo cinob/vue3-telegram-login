@@ -17,8 +17,8 @@
 </template>
 
 <script setup>
-// import { telegramLoginTemp } from 'vue3-telegram-login'
-import { telegramLoginTemp } from '../lib/main.js'
+import { telegramLoginTemp } from 'vue3-telegram-login'
+// import { telegramLoginTemp } from '../lib/main.js'
 import { ref } from 'vue'
 
 const isLoaded = ref(false)

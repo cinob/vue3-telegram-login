@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { defineEmit, defineProps, onMounted, ref } from "vue"
+import { defineEmits, defineProps, onMounted, ref } from "vue"
 
 const props = defineProps({
   mode: {
@@ -39,7 +39,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmit(['callback', 'loaded'])
+const emit = defineEmits(['callback', 'loaded'])
 function onTelegramAuth (user) {
   emit('callback', user)
 }

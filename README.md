@@ -5,10 +5,10 @@ Base on [vue-telegram-login](https://github.com/vchaptsev/vue-telegram-login), t
 
 ## Installation
 
-Install with [yarn](https://yarnpkg.com):
+Install with [pnpm](https://pnpm.io/):
 
   ```bash
-  $ yarn add vue3-telegram-login
+  $ pnpm add vue3-telegram-login
   ```
 
 Install with [npm](https://npmjs.com):
