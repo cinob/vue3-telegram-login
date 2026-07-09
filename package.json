@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "vue3-telegram-login",
   "author": {
     "name": "cinob",
@@ -44,6 +44,6 @@
     "@vue/compiler-sfc": "^3.4.21",
     "taze": "^0.13.3",
     "vite": "^5.2.8",
-    "vue3-telegram-login": "^0.0.4"
+    "vue3-telegram-login": "^1.1.0"
   }
 }

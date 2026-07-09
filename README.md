@@ -1,85 +1,72 @@
-## Vue3 Telegram Login
+# Vue3 Telegram Login
 
-Base on [vue-telegram-login](https://github.com/vchaptsev/vue-telegram-login), thanks [@vchaptsev](https://github.com/vchaptsev)
-
+Vue 3 component for Telegram Login Widget (`telegram-widget.js?22`).
 
 ## Installation
 
-Install with [pnpm](https://pnpm.io/):
+```bash
+pnpm add vue3-telegram-login
+```
 
-  ```bash
-  $ pnpm add vue3-telegram-login
-  ```
-
-Install with [npm](https://npmjs.com):
-
-  ```bash
-  $ npm i vue3-telegram-login --save
-  ```
- 
 ## Usage
 
-Import `telegram-login-temp`, pass it to the `components` and use in your template
+### Callback mode
 
-```html
-<template>
-  <!-- Callback mode -->
-  <span v-if="!isLoaded">Loading...</span>
-  <telegram-login-temp
-    mode="callback"
-    telegram-login="YourTelegramBot"
-    @loaded='telegramLoadedCallbackFunc'
-    @callback="yourCallbackFunction"
-  />
-
-  <!-- Redirect mode -->
-  <telegram-login-temp
-    mode="redirect"
-    telegram-login="YourTelegramBot"
-    @loaded='telegramLoadedCallbackFunc'
-    redirect-url="https://your-website.io"
-  />
-</template>
-
+```vue
 <script setup>
 import { telegramLoginTemp } from 'vue3-telegram-login'
-import { ref } from 'vue'
 
-const isLoaded = ref(false)
-
-function telegramLoadedCallbackFunc () {
-  console.log('script is loaded')
-  isLoaded.value = true
-}
-
-function yourCallbackFunction (user) {
-  // gets user as an input
-  // id, first_name, last_name, username,
-  // photo_url, auth_date and hash
+function handleCallback(user) {
   console.log(user)
 }
 </script>
+
+<template>
+  <telegram-login-temp
+    mode="callback"
+    telegram-login="YourTelegramBot"
+    @callback="handleCallback"
+  />
+</template>
 ```
 
+### Redirect mode
+
+```vue
+<script setup>
+import { telegramLoginTemp } from 'vue3-telegram-login'
+</script>
+
+<template>
+  <telegram-login-temp
+    mode="redirect"
+    telegram-login="YourTelegramBot"
+    redirect-url="https://your-domain.com/auth/telegram/callback"
+  />
+</template>
+```
 
 ## Props
-You can play around with options on the official [widget page](https://core.telegram.org/widgets/login#widget-configuration)
 
-| Name          | Description                                                                   | Required | Default     |
-| ------------- | ----------------------------------------------------------------------------- | -------- | ----------- |
-| mode          | 'callback' or 'redirect'                                                      | True     | null        |
-| telegramLogin | Your telegram bot name                                                        | True     | null        |
-| @callback     | Your callback function, it will be called after success if mode is 'callback' | False    | true        |
-| @loaded       | Telegram script loaded callback function                                      | False    | null        |
-| redirectUrl   | Your redirect URL, user will be redirected if mode is 'redirect'              | False    | null        |
-| requestAccess | 'write' if you want to get access to send messages from your bot              | False    | 'read'      |
-| size          | 'large', 'medium' or 'small'                                                  | False    | 'large'     |
-| userpic       | Show user photo, true or false                                                | False    | true        |
-| radius        | Button corner radius (default depends on chosen size)                         | False    | 20\14\10    |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `mode` | `'callback' \| 'redirect'` | - | Login mode. |
+| `telegramLogin` | `string` | - | Telegram bot username, must end with `bot`. |
+| `redirectUrl` | `string` | `''` | Redirect URL for redirect mode. |
+| `requestAccess` | `'read' \| 'write'` | `'read'` | Use `write` to request permission to send messages. |
+| `size` | `'small' \| 'medium' \| 'large'` | `'large'` | Button size. |
+| `userpic` | `boolean` | `true` | Show user photo. |
+| `radius` | `string` | `''` | Button corner radius. |
 
+## Events
+
+| Event | Description |
+| --- | --- |
+| `loaded` | Telegram widget script loaded. |
+| `callback` | Login success callback, only for callback mode. |
 
 ## Notes
-1. You need to set domain to your bot if you want to user Telagram Login (`/setdomain` command to [@BotFather](https://t.me/botfather))
-2. You need to verify the authentication and the integrity of the data received by comparing the received hash parameter with the hexadecimal representation of the HMAC-SHA-256 signature of the data-check-string with the SHA256 hash of the bot's token used as a secret key ([source](https://core.telegram.org/widgets/login#checking-authorization)).<br>
-You can find some code samples [on this page](https://gist.github.com/anonymous/6516521b1fb3b464534fbc30ea3573c2).
-3. Don't disable third party cookies if you want to use Telegram Login as a User (thanks [@robverhoef](https://github.com/robverhoef))
+
+- Set your bot domain with [@BotFather](https://t.me/botfather) using `/setdomain`.
+- Always verify the received payload on your server. See [Checking authorization](https://core.telegram.org/widgets/login#checking-authorization).
+- This package wraps the legacy Telegram Login Widget. New OAuth-style flows require a different integration.

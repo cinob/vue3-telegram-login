@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^5.2.8
     version: 5.2.8
   vue3-telegram-login:
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^1.1.0
+    version: 1.1.0
 
 packages:
 
@@ -1828,8 +1828,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vue3-telegram-login@0.0.4:
-    resolution: {integrity: sha512-CZziFvkd1Ng97sdPjdyvLXfuKcamrG3/iSM0EYgj8L4qX/7GE/LmetZu7ZPiJLtVk5g2F91NJN/6Ws3ZKfomxA==}
+  /vue3-telegram-login@1.1.0:
+    resolution: {integrity: sha512-/uDFS1nrKaUemR9y63mu5et9axqfkGExrC4bpmX5iOuquQXZK4RXrPd3WQvOJ/LDRZDkITpdN18fVmcveTGJCA==}
     dependencies:
       vue: 3.4.21
     transitivePeerDependencies:
